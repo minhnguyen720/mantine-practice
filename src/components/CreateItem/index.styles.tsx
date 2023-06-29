@@ -12,7 +12,7 @@ const useStyles = createStyles((theme) => ({
     },
   },
   input: {
-    width: "80%",
+    width: "100%",
   },
 }));
 

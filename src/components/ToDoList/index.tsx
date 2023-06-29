@@ -1,7 +1,8 @@
-import { Stack, createStyles, Center } from "@mantine/core";
+import { Stack, createStyles, Center, Divider } from "@mantine/core";
 import CreateItem from "../CreateItem";
 import { useState } from "react";
 import { iToDoList } from "@/interfaces/iTodoList";
+import ToDoItem from "../ToDoItem";
 
 const useStyles = createStyles((theme) => ({
   stack: {
@@ -24,10 +25,12 @@ const ToDoList = () => {
   return (
     <Center className={classes.center}>
       <Stack spacing="md" className={classes.stack}>
-        <CreateItem toDoList={toDoList} setToDoList={setToDoList} />
-
+        <CreateItem setToDoList={setToDoList} />
+        {toDoList.length > 0 && <Divider />}
         {toDoList.map((item, index) => {
-          return <div>Hello world {index}</div>;
+          return (
+            <ToDoItem key={index} content={item.content} title={item.name} />
+          );
         })}
       </Stack>
     </Center>
