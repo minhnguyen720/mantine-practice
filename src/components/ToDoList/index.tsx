@@ -29,7 +29,13 @@ const ToDoList = () => {
         {toDoList.length > 0 && <Divider />}
         {toDoList.map((item, index) => {
           return (
-            <ToDoItem key={index} content={item.content} title={item.name} />
+            <ToDoItem
+              key={index}
+              content={item.content}
+              title={item.name}
+              id={item.id}
+              setToDoList={setToDoList}
+            />
           );
         })}
       </Stack>
